@@ -2,11 +2,14 @@
   "name": "aakarsh.dev",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": "true",
   "dependencies": {
     "three": "^0.125.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
