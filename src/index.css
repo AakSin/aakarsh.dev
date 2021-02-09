@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
 html,
 body,
 #root {
@@ -26,7 +26,15 @@ body {
   position: fixed;
   overflow: hidden;
   overscroll-behavior-y: none;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  color: black;
-  background: #f0f0f0;
+  font-family: 'Lexend Mega', sans-serif;
+  color: #21336e;
+  background: #f8f8f8;
+}
+
+h1{
+  position:absolute;
+  top:40%;
+  left:5%;
+  z-index:1;
+  letter-spacing:-2px;
 }

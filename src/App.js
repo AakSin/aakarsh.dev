@@ -41,13 +41,15 @@ function Swarm({ count, mouse }) {
       mesh.current.setMatrixAt(i, dummy.matrix)
     })
     mesh.current.instanceMatrix.needsUpdate = true
+    
   })
 
   return (
     <>
       <instancedMesh ref={mesh} args={[null, null, count]} castShadow receiveShadow>
-        <sphereBufferGeometry args={[1, 32, 32]} />
-        <meshPhongMaterial />
+      <boxBufferGeometry args={[2, 2, 2]} />
+        <meshPhongMaterial color={'#21336e'}/>
+      
       </instancedMesh>
     </>
   )
@@ -55,14 +57,15 @@ function Swarm({ count, mouse }) {
 
 function App() {
   return (
+   
     <Canvas
       shadowMap
       gl={{ alpha: false, antialias: false }}
       camera={{ fov: 75, position: [0, 0, 70], near: 10, far: 150 }}
       onCreated={(state) => state.gl.setClearColor('#f0f0f0')}>
       <ambientLight intensity={1.5} />
-      <pointLight position={[100, 100, 100]} intensity={2} castShadow />
-      <pointLight position={[-100, -100, -100]} intensity={5} color="red" />
+      <pointLight position={[100, 100, 100]} intensity={2} castShadow  />
+      <pointLight position={[0, 50, -100]} intensity={5} color="red" />
       <Swarm count={150} />
       <EffectComposer multisampling={0}>
         <SSAO samples={31} radius={20} intensity={40} luminanceInfluence={0.1} color="black" />
